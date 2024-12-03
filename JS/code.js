@@ -1,18 +1,43 @@
-$(document).ready(function() {
-    // Toggle navigation menu on hamburger click
-    $(".hamburger").click(function() {
-      $(".nav-links").toggleClass("show");
-    });
-  
-    // Slide functionality for hero image
-    var heroImages = $(".hero img");
-    var currentIndex = 0;
-  
-    function slideHero() {
-      heroImages.eq(currentIndex).fadeOut(1000);
-      currentIndex = (currentIndex + 1) % heroImages.length;
-      heroImages.eq(currentIndex).fadeIn(1000);
+// Get references to the necessary DOM elements
+const heroSlider = document.querySelector('.hero-slider');
+const prevSlideBtn = document.querySelector('.prev-slide');
+const nextSlideBtn = document.querySelector('.next-slide');
+const sliderIndicators = document.querySelectorAll('.slider-indicators .indicator');
+
+let currentSlide = 0;
+const totalSlides = heroSlider.children.length;
+
+// Function to update the slider
+function updateSlider() {
+  heroSlider.style.transform = `translateX(${-currentSlide * 100}%)`;
+
+  sliderIndicators.forEach((indicator, index) => {
+    if (index === currentSlide) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
     }
-  
-    setInterval(slideHero, 5000);
   });
+}
+
+// Click event handlers for the slider controls
+prevSlideBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+});
+
+nextSlideBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+});
+
+// Click event handlers for the slider indicators
+sliderIndicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    currentSlide = index;
+    updateSlider();
+  });
+});
+
+// Initialize the slider
+updateSlider();

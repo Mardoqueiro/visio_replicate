@@ -8,39 +8,74 @@
 </head>
 <body>
   <header>
+    <div class="logo">VISIO</div>
     <nav>
-      <div class="logo">
-        <img src="image/Visio_Logo_Black.png" alt="Visio Logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="#">The Visio difference</a></li>
-        <li><a href="#">Meet the Visio team</a></li>
-        <li><a href="#">Our funds and investments</a></li>
-      </ul>
-      <div class="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+      <button class="menu-toggle">
+        <span class="hamburger-icon"></span>
+      </button>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <img src="image/sergey-pesterev-FRMt.png" alt="Hero Image">
-      <div class="hero-text">
-        <h1>Look beyond the ordinary</h1>
+      <div class="hero-slider">
+        <div class="slide">
+          <img src="image/sergey-pesterev-FRMt.png" alt="Worker">
+          <div class="overlay">
+            <h1>Look beyond the ordinary</h1>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="image/sergey-pesterev-FRMt.png" alt="Worker">
+          <div class="overlay">
+            <h1>Look beyond the ordinary</h1>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="image/sergey-pesterev-FRMt.png" alt="Worker">
+          <div class="overlay">
+            <h1>Look beyond the ordinary</h1>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="prev-slide">&lt;</button>
+        <div class="slider-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+        <button class="next-slide">&gt;</button>
       </div>
     </section>
 
-    <!-- Additional sections will go here -->
+    <section class="about">
+      <p>Visio is an investment management firm founded by Patrick Mayhew in 2003. The company's highly focused and dynamic team manages assets across a diversified client base that includes some of the world's largest pension funds and institutions.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature-box">
+        <h2>The Visio difference</h2>
+        <p>Learn more about our unique approach</p>
+        <a href="#" class="read-more">&#62;</a>
+      </div>
+      <div class="feature-box">
+        <h2>Meet the Visio team</h2>
+        <p>Get to know the people behind the firm</p>
+        <a href="#" class="read-more">&#62;</a>
+      </div>
+      <div class="feature-box">
+        <h2>Our funds and investments</h2>
+        <p>Explore our range of investment solutions</p>
+        <a href="#" class="read-more">&#62;</a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <!-- Footer content will go here -->
+    <!-- Add footer content as needed -->
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <script src="JS/code.js"></script>
 </body>
 </html>
